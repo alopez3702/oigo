@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Oigo.MainPage">
+    <AbsoluteLayout x:Name="MP" BackgroundColor="BlueViolet">
+        <!--Background Image-->
+        <Image Source="Speech_App_Background.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,0.2" AbsoluteLayout.LayoutFlags="All">
+                <!--Back Button-->
+                <Button x:Name="BackButton" IsEnabled="True" Text="&lt;-" AbsoluteLayout.LayoutBounds="0,0,0.1,1" AbsoluteLayout.LayoutFlags="All" Clicked="Handle_Back" FontSize="32"></Button>
+                <AbsoluteLayout x:Name="border" BackgroundColor="LightGray" Padding="1,1,1,1" AbsoluteLayout.LayoutBounds="1,0,0.9,1" AbsoluteLayout.LayoutFlags="All">
+                    <Frame OutlineColor="DarkGray" Padding="10" BackgroundColor="LightGray" AbsoluteLayout.LayoutBounds="0.5,0.5,0.98,0.9" AbsoluteLayout.LayoutFlags="All">
+                        <AbsoluteLayout HeightRequest="55">
+                            <!--Oigo Logo-->
+                            <Image x:Name="OigoLogo" Source="Oigo_logo.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="1,0.5,0.3,1" AbsoluteLayout.LayoutFlags="All"/>
+                            <StackLayout AbsoluteLayout.LayoutBounds="1,0.5,0.3,1" AbsoluteLayout.LayoutFlags="All">
+                                <Button x:Name="TutorialButton" Clicked="Handle_Tutorial" BackgroundColor="Transparent"></Button>
+                            </StackLayout>
+                            <!--Phrase Preview Bar-->
+                            <Label x:Name="text" Text="I am sad because of what you said" AbsoluteLayout.LayoutBounds="0,0.5,0.7,1" AbsoluteLayout.LayoutFlags="All"/>
+                        </AbsoluteLayout>
+                    </Frame>
+                </AbsoluteLayout>
+            </AbsoluteLayout>
+
+
+            <Frame OutlineColor="Transparent" Padding="5" BackgroundColor="BlueViolet" AbsoluteLayout.LayoutBounds="0,0.5,1,0.5" AbsoluteLayout.LayoutFlags="All">
+                <AbsoluteLayout x:Name="topFlex" IsEnabled="True">
+
+                </AbsoluteLayout>
+            </Frame>
+
+
+
+
+            <AbsoluteLayout x:Name="bottomFlex" AbsoluteLayout.LayoutBounds="0,1,1,0.2" AbsoluteLayout.LayoutFlags="All" IsEnabled="True">
+                <Button x:Name="CustomizeButton"  Text="+" FontSize="22" IsEnabled="True" Clicked="Customize_Clicked" AbsoluteLayout.LayoutBounds="0,0,0.25,1" AbsoluteLayout.LayoutFlags="All"></Button>
+                <Button Text="Self" FontSize="22" IsEnabled="False" AbsoluteLayout.LayoutBounds="0.33,0,0.25,1" AbsoluteLayout.LayoutFlags="All"></Button>
+                <Button x:Name="HelpButton"  Text="Help Me" Clicked="Help_Me_Clicked" FontSize="22" AbsoluteLayout.LayoutBounds="0.67,0,0.25,1" AbsoluteLayout.LayoutFlags="All"></Button>
+                <Button x:Name="SpeakButton" Text="Speak" IsEnabled ="True" Clicked="Speak" FontSize="22" AbsoluteLayout.LayoutBounds="1,0,0.25,1" AbsoluteLayout.LayoutFlags="All"></Button>
+            </AbsoluteLayout>
+        </AbsoluteLayout>
+        
+        <!--Tutorial Window-->
+        <ContentView x:Name="tutorial" 
+                     BackgroundColor="#C0808080" 
+                     Padding="10, 0" 
+                     IsVisible="True"
+                     InputTransparent="False"
+                     AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                     AbsoluteLayout.LayoutFlags="All">
+            <StackLayout x:Name="Tutorial_Window" 
+                     AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                     AbsoluteLayout.LayoutFlags="All">
+                <StackLayout x:Name="Tutorial_Box"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Orientation="Horizontal" 
+                             HeightRequest="200" 
+                             WidthRequest="500" 
+                             BackgroundColor="White">
+                </StackLayout>
+            </StackLayout>
+        </ContentView>
+    </AbsoluteLayout>
+</ContentPage>

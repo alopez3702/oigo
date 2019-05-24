@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Oigo.CustomizationCustomize">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="preview" Text=""></Label>
+            <StackLayout VerticalOptions="CenterAndExpand" >
+                <Picker x:Name="subject" Margin="10" Title="Subject">
+                    <Picker.Items>
+                        <x:String>Do you feel</x:String>
+                        <x:String>I feel</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="emotion" Margin="10" Title="Emotion">
+                    <Picker.Items>
+                        <x:String>angry</x:String>
+                        <x:String>frustrated</x:String>
+                        <x:String>happy</x:String>
+                        <x:String>worried</x:String>
+                        <x:String>sad</x:String>
+                        <x:String>scared</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry x:Name="conjunction" Margin="10" Placeholder="Conjunction"></Entry>
+                <Entry x:Name="conclusion" Margin="10" Placeholder="Conclusion"></Entry>
+            </StackLayout>
+            <Button Text="Save" Pressed="Save_Pressed" VerticalOptions="CenterAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
